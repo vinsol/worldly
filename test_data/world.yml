@@ -1,0 +1,9 @@
+---
+- alpha_2_code: AD
+  alpha_3_code: AND
+  numeric_code: '020'
+  type: country
+- alpha_2_code: AL
+  alpha_3_code: ALB
+  numeric_code: 008
+  type: country

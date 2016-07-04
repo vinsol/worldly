@@ -27,4 +27,8 @@ use Mix.Config
 # Configuration from the imported file will override the ones defined
 # here (which is why it is important to import them last).
 #
-#     import_config "#{Mix.env}.exs"
+config :worldly, data_path: "lib/data"
+
+if Mix.env == :test do
+  import_config "#{Mix.env}.exs"
+end
