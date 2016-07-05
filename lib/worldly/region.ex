@@ -37,7 +37,7 @@ defmodule Worldly.Region do
   defp build_region_structs(region_list, %Country{alpha_2_code: code}) do
     Enum.map(region_list, fn(region_map) -> %Region{struct(Region, region_map)| parent_code: code, parent_file_path: downcase(code)} |> Locale.set_locale_data('region') end)
   end
-  defp build_region_structs(region_list, %Region{code: code, parent_code: parent_code, parent_file_path: parent_file_path}) do
+  defp build_region_structs(region_list, %Region{code: code, parent_file_path: parent_file_path}) do
     Enum.map(region_list, fn(region_map) -> %Region{struct(Region, region_map)| parent_code: code, parent_file_path: "#{parent_file_path}/#{downcase(code)}"} |> Locale.set_locale_data('region') end)
   end
 
@@ -46,17 +46,17 @@ defmodule Worldly.Region do
     |> Path.join("world")
     |> Path.join("#{code}.yml")
   end
-  defp region_file(%Region{code: code, parent_code: parent_code, parent_file_path: parent_file_path}) do
+  defp region_file(%Region{code: code, parent_file_path: parent_file_path}) do
     region_data_files_path
     |> Path.join("world")
-    |> Path.join(parent_code)
+    |> Path.join(parent_file_path)
     |> Path.join("#{code}.yml")
   end
 
   defp downcase(str) do
     String.downcase(str)
   rescue
-    e in FunctionClauseError ->
+    _e in FunctionClauseError ->
       str
   end
 end

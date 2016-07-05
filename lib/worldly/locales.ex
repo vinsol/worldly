@@ -32,7 +32,7 @@ defmodule Worldly.Locale do
   end
   defp get_locale_data(%Region{code: code, parent_file_path: parent_file_path}, locale_name) do
     code_cc = to_char_list(String.downcase to_string(code))
-    [{^locale_name, [{'world', world_data}]}] = regional_locale_file_path(locale_name, code_cc, parent_file_path) |> load_locale_data()
+    [{^locale_name, [{'world', world_data}]}] = regional_locale_file_path(locale_name, parent_file_path) |> load_locale_data()
     parents = String.split(parent_file_path, "/") |> Enum.map(fn(x) -> to_char_list(x) end)
     {_, filtered_data} = Enum.map_reduce(parents, world_data, fn(p, acc) ->
       [{^p, new_acc}] = acc
@@ -47,7 +47,7 @@ defmodule Worldly.Locale do
     |> Path.join(locale_name)
   end
 
-  defp regional_locale_file_path(locale_name, code, parent_file_path) do
+  defp regional_locale_file_path(locale_name, parent_file_path) do
     locale_folder(locale_name)
     |> Path.join("world")
     |> Path.join("#{parent_file_path}.yml")

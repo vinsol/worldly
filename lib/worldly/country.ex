@@ -29,7 +29,7 @@ defmodule Worldly.Country do
   defp with_code(code, len) when len == 3 do
     Enum.filter(all, fn(%Country{alpha_3_code: country_code}) -> country_code == code end)
   end
-  defp with_code(code, len) do
+  defp with_code(_code, _len) do
     []
   end
 
