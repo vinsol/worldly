@@ -29,6 +29,6 @@ use Mix.Config
 #
 config :worldly, data_path: "data"
 
-if Mix.env == :test do
+if Mix.env in [:test] do
   import_config "#{Mix.env}.exs"
 end
