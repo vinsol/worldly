@@ -22,7 +22,10 @@ Alpha Quality(Work in Progress). Reads the files for every function call.
   1. Add worldly to your list of dependencies in `mix.exs`.
 
          def deps do
-           [{:worldly, "~> 0.1.0"}]
+           [
+             {:yamerl, github: "yakaz/yamerl"},
+             {:worldly, "~> 0.1.0"}
+           ]
          end
 
   2. **Ensure worldly and yamerl is started before your application**:
