@@ -3,7 +3,9 @@ defmodule Worldly.Mixfile do
 
   def project do
     [app: :worldly,
-     version: "0.0.1",
+     version: "0.1.0",
+     description: description(),
+     package: package(),
      elixir: "~> 1.2",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
@@ -28,5 +30,19 @@ defmodule Worldly.Mixfile do
   # Type "mix help deps" for more examples and options
   defp deps do
     [{:yamerl, github: "yakaz/yamerl"}]
+  end
+
+  defp package do
+    [
+      name: :worldly,
+      files: ["config", "lib", "data", "test", "test_data", "mix.exs", "README*", "readme*", "LICENSE*", "license*"],
+      maintainers: ["Pikender Sharma", "Nimish Mehta"],
+      licenses: ["Apache 2.0"],
+      links: %{"GitHub" => "https://github.com/vinsol/worldly",
+      "Docs" => "http://vinsol.github.io/worldly/"}]
+  end
+
+  defp description do
+    "Includes Country and Region data from the Debian iso-data project and helpers"
   end
 end
