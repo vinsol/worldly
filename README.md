@@ -9,7 +9,7 @@ Alpha Quality(Work in Progress). Reads the files for every function call.
 
 1. [ ] Improve performance by utilizing the OTP.
 1. [ ] Add proper localization support.
-1. [ ] Better Documentation
+1. [ ] Better Documentation [Module and Function docs]
 1. [ ] Allow countries or regions to be extended in App
 1. [x] Publish to Hex.
 1. [x] Add Tests
