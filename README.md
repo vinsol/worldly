@@ -1,5 +1,8 @@
 # Worldly
-Elixir Module containing data about Countries and their states
+
+Elixir Module containing data about Countries, states and their regions as per iso standard.
+
+This package is a port of [carmen ruby gem](https://github.com/jim/carmen)
 
 **Warning**
 
