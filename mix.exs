@@ -35,7 +35,7 @@ defmodule Worldly.Mixfile do
   defp package do
     [
       name: :worldly,
-      files: ["config", "lib", "data", "test", "test_data", "mix.exs", "README*", "LICENSE*"],
+      files: ["config", "lib", "priv", "test", "mix.exs", "README*", "LICENSE*"],
       maintainers: ["Pikender Sharma", "Nimish Mehta"],
       licenses: ["Apache 2.0"],
       links: %{"GitHub" => "https://github.com/vinsol/worldly",
