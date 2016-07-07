@@ -10,6 +10,7 @@ Alpha Quality(Work in Progress). Reads the files for every function call.
 1. [ ] Improve performance by utilizing the OTP.
 1. [ ] Add proper localization support.
 1. [ ] Better Documentation
+1. [ ] Allow countries or regions to be extended in App
 1. [x] Publish to Hex.
 1. [x] Add Tests
 
@@ -28,6 +29,8 @@ Alpha Quality(Work in Progress). Reads the files for every function call.
          end
 
 ## Usage
+
+*Disclaimer:* - Locale need to be added for all corresponding entries in countries or regions to provide `name` and other relevant information. It might crash if corresponding locale mapping missing.
 
 1. To get the list of countries use `Worldly.Country.all`
 1. You can get country by name using `Worldly.Country.with_name name_in_locale`
