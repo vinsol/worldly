@@ -28,6 +28,12 @@ Alpha Quality(Work in Progress). Reads the files for every function call.
            [applications: [:yamerl, :worldly]]
          end
 
+  3. Add worldly config data path in config/config.exs
+
+         config :worldly, :data_path, Path.join(Mix.Project.deps_path, "/worldly/data")
+
+  4. You can also checkout a [demo mix project](https://github.com/pikender/worldly_test_app) showing use of worldly and its setup. Check README and commit-history (4 commits only :) )
+
 ## Usage
 
 *Disclaimer:* - Locale need to be added for all corresponding entries in countries or regions to provide `name` and other relevant information. It might crash if corresponding locale mapping missing.
