@@ -36,7 +36,8 @@ Alpha Quality(Work in Progress). Reads the files for every function call.
 
   3. Add worldly config data path in config/config.exs
 
-         config :worldly, :data_path, Path.join(Mix.Project.deps_path, "/worldly/data")
+         config :worldly, :data_path, Path.join(Mix.Project.build_path, "lib/worldly/priv/data")
+
 
   4. You can also checkout a [demo mix project](https://github.com/pikender/worldly_test_app) showing use of worldly and its setup. Check README and commit-history (4 commits only :) )
 

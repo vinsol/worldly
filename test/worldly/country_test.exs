@@ -26,9 +26,9 @@ defmodule Worldly.CountryTest do
 
   @tag :real_data
   test "real paths working" do
-    Application.put_env(:worldly, :data_path, "data")
+    Application.put_env(:worldly, :data_path, "priv/data")
     assert Worldly.Country.with_code("AL") == [country_albania]
-    Application.put_env(:worldly, :data_path, "test_data")
+    Application.put_env(:worldly, :data_path, "priv/test_data")
   end
 
   defp country_andorra do
