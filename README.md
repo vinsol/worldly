@@ -24,7 +24,7 @@ Alpha Quality(Work in Progress). Reads the files for every function call.
          def deps do
            [
              {:yamerl, github: "yakaz/yamerl"},
-             {:worldly, "~> 0.1.0"}
+             {:worldly, "~> 0.1.1"}
            ]
          end
 
