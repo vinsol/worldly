@@ -1,6 +1,14 @@
 defmodule Worldly.CountryTest do
   use ExUnit.Case
 
+  setup context do
+    if context[:real_data] do
+      Application.put_env(:worldly, :data_path, context[:real_data])
+      on_exit fn -> Application.put_env(:worldly, :data_path, "priv/test_data") end
+    end
+    :ok
+  end
+
   test "all/0" do
     assert Worldly.Country.all == [
       country_andorra,
@@ -24,11 +32,9 @@ defmodule Worldly.CountryTest do
     assert Worldly.Country.with_code("ALBA") == []
   end
 
-  @tag :real_data
+  @tag real_data: "priv/data"
   test "real paths working" do
-    Application.put_env(:worldly, :data_path, "priv/data")
     assert Worldly.Country.with_code("AL") == [country_albania]
-    Application.put_env(:worldly, :data_path, "priv/test_data")
   end
 
   defp country_andorra do
