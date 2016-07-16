@@ -44,13 +44,13 @@ defmodule Worldly.Region do
   defp region_file(%Country{alpha_2_code: code}) do
     region_data_files_path
     |> Path.join("world")
-    |> Path.join("#{code}.yml")
+    |> Path.join("#{downcase(code)}.yml")
   end
   defp region_file(%Region{code: code, parent_file_path: parent_file_path}) do
     region_data_files_path
     |> Path.join("world")
     |> Path.join(parent_file_path)
-    |> Path.join("#{code}.yml")
+    |> Path.join("#{downcase(code)}.yml")
   end
 
   defp downcase(str) do
