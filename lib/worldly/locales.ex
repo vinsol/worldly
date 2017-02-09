@@ -43,7 +43,7 @@ defmodule Worldly.Locale do
   end
 
   defp locale_folder(locale_name) do
-    locales_folder_path
+    locales_folder_path()
     |> Path.join(locale_name)
   end
 
