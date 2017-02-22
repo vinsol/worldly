@@ -1,2 +1,2 @@
-ExUnit.configure(exclude: [real_data: true])
+ExUnit.configure(exclude: [:real_data])
 ExUnit.start()
